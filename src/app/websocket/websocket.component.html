@@ -1,0 +1,63 @@
+<p>websocket works!</p>
+
+<div class="ui-g ui-fluid">
+  <div class="ui-g-12 ui-md-4">
+    <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+        <input id="sender" type="text" pInputText placeholder="Sender" [(ngModel)]='sender'>
+      {{sender}}
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon">$$</span>
+      <input type="text" pInputText placeholder="Room" [(ngModel)]='room'>
+      <p-button label="Connect" (click)="connect()"></p-button>
+      <p-button label="Disconnect" (click)="disconnect()"></p-button>
+      {{room}}
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon">--</span>
+      <input type="text" pInputText placeholder="Type" [(ngModel)]='type'>
+      {{type}}
+    </div>
+
+    <br>
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon"><i class="fa fa-credit-card"></i></span>
+      <input type="text" pInputText placeholder="Message" [(ngModel)]='message'>
+      <p-button label="Send" (click)="sendMessage()"></p-button>
+      {{message}}
+    </div>
+
+    <br>
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon"><i class="fa fa fa-cc-visa"></i></span>
+      <input type="text" pInputText placeholder="MessageAll" [(ngModel)]='messageAll'>
+      <p-button label="群发消息" (click)="sendMessageToAll()"></p-button>
+    </div>
+
+    <br>
+    = = = = = =
+    <p>这是来自聊天室的消息：</p>
+    <br>
+
+    <div>
+      <li *ngFor="let item of items">
+        {{item.user}} - {{item.content}}
+      </li>
+    </div>
+
+    = = = = = =
+    <p>这是群发的消息：</p>
+    <br>
+
+    <div>
+      <li *ngFor="let atem of atems">
+        {{atem.user}} - {{atem.content}}
+      </li>
+    </div>
+  </div>
+</div>
